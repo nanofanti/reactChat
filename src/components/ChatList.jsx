@@ -25,6 +25,27 @@ export default function ChatList() {
           <p>Hello</p>
         </div>
       </div>
+      <div className={styles.item}>
+        <img src="avatar.png" alt="" />
+        <div className={styles.texts}>
+          <span>Jane Doe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      <div className={styles.item}>
+        <img src="avatar.png" alt="" />
+        <div className={styles.texts}>
+          <span>Jane Doe</span>
+          <p>Hello</p>
+        </div>
+      </div>
+      <div className={styles.item}>
+        <img src="avatar.png" alt="" />
+        <div className={styles.texts}>
+          <span>Jane Doe</span>
+          <p>Hello</p>
+        </div>
+      </div>
     </div>
   );
 }
