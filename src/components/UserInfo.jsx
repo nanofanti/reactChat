@@ -4,13 +4,13 @@ export default function UserInfo() {
   return (
     <div className={styles.userinfo}>
       <div className={styles.user}>
-        <img src="" alt="" />
-        <h2></h2>
+        <img className={styles.profile_img} src="avatar.png" alt="" />
+        <h2>John Doe</h2>
       </div>
       <div className={styles.icons}>
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
+        <img src="/more.png" alt="" />
+        <img src="/video.png" alt="" />
+        <img src="/edit.png" alt="" />
       </div>
     </div>
   );
