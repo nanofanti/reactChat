@@ -17,6 +17,13 @@ export default function Login() {
     }
   };
 
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const { username, email, password } = Object.fromEntries(formData);
+    console.log(username);
+  };
+
   const handleLogin = (e) => {
     e.preventDefault();
   };
@@ -34,7 +41,7 @@ export default function Login() {
       <div className={styles.separator}></div>
       <div className={styles.item}>
         <h2>Create an Account</h2>
-        <form action="">
+        <form onSubmit={handleRegister}>
           <label htmlFor="file">
             <img src={avatar.url || "/avatar.png"} alt="" />
             Upload an image
