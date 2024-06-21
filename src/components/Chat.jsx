@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Chat.module.css";
 import EmojiPicker from "emoji-picker-react";
 
 export default function Chat() {
   const [open, setOpen] = useState(false);
+  const [text, setText] = useState("");
+
+  const endRef = useRef(null);
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
+  const handleEmoji = (e) => {
+    setText((prev) => prev + e.emoji);
+    setOpen(false);
+  };
+
   return (
     <div className={styles.chat}>
       <div className={styles.top}>
@@ -23,7 +35,76 @@ export default function Chat() {
           <img src="info.png" alt="" />
         </div>
       </div>
-      <div className={styles.center}></div>
+      <div className={styles.center}>
+        <div className={styles.message_own}>
+          <div className={styles.texts}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
+              debitis.
+            </p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className={styles.message_other}>
+          <img src="avatar.png" alt="" />
+          <div className={styles.other_texts}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
+              debitis.
+            </p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className={styles.message_own}>
+          <div className={styles.texts}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
+              debitis.
+            </p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className={styles.message_other}>
+          <img src="avatar.png" alt="" />
+          <div className={styles.other_texts}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
+              debitis.
+            </p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className={styles.message_own}>
+          <div className={styles.texts}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
+              debitis.
+            </p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className={styles.message_other}>
+          <img src="avatar.png" alt="" />
+          <div className={styles.other_texts}>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
+              debitis.
+            </p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className={styles.message_own}>
+          <div className={styles.texts}>
+            <img src="codememe.webp" alt="" />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum,
+              debitis.
+            </p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div ref={endRef}></div>
+      </div>
       <div className={styles.bottom}>
         <div className={styles.icons_bottom}>
           <img src="img.png" alt="" />
@@ -35,7 +116,9 @@ export default function Chat() {
           placeholder="Type a message..."
           name=""
           id=""
+          value={text}
           className={styles.message_input}
+          onChange={(e) => setText(e.target.value)}
         />
         <div className={styles.emoji}>
           <img
@@ -43,7 +126,9 @@ export default function Chat() {
             alt=""
             onClick={() => setOpen((prev) => !prev)}
           />
-          <EmojiPicker open={open} />
+          <div className={styles.picker_container}>
+            <EmojiPicker open={open} onEmojiClick={handleEmoji} />
+          </div>
         </div>
         <button className={styles.send_button}>Send</button>
       </div>
