@@ -1,0 +1,60 @@
+.addUser {
+  /* To have it in the middle of the screen */
+  width: max-content;
+  height: max-content;
+  padding: 1.875rem;
+  border-radius: 0.625rem;
+  position: absolute;
+  background-color: #30482ae6;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  gap: 1.25rem;
+  input {
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    border: none;
+    outline: none;
+  }
+  button {
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    background-color: #526647;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.user {
+  margin-top: 3.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  button {
+    padding: 0.625rem;
+    border-radius: 0.625rem;
+    background-color: #526647;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  img {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
