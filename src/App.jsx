@@ -7,7 +7,7 @@ import { useState } from "react";
 import Notification from "./components/Notification";
 
 function App() {
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
 
   return (
     <>
