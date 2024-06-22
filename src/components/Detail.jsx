@@ -1,3 +1,4 @@
+import { auth } from "../library/firebase";
 import styles from "./Detail.module.css";
 
 export default function Detail() {
@@ -57,7 +58,12 @@ export default function Detail() {
           </div>
         </div>
         <button className={styles.button_block}>Block User</button>
-        <button className={styles.button_log_out}>Log Out</button>
+        <button
+          className={styles.button_log_out}
+          onClick={() => auth.signOut()}
+        >
+          Log Out
+        </button>
       </div>
     </div>
   );
