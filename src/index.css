@@ -17,8 +17,15 @@ body {
   width: 80vw;
   height: 90vh;
   background-color: rgba(17, 25, 40, 0.5);
-  backdrop-filter: blur(19px) saturate(180%);
-  border-radius: 15px;
+  backdrop-filter: blur(1.1875rem) saturate(180%);
+  border-radius: 0.9375rem;
   border: 1px solid rgba(255, 255, 255, 0.125);
   display: flex;
+}
+
+.loading {
+  padding: 3.125rem;
+  font-size: 2.25rem;
+  border-radius: 0.625rem;
+  background-color: rgba(17, 25, 40, 0.5);
 }
